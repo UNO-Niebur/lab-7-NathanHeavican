@@ -1,4 +1,8 @@
 #NumberTests.py
+#Name: Nathan Heavican
+#Date: 3/7/26
+#Assignment: Lab 7
+#Purpose: Practice breaking large problems into smaller parts, writing reusable helper functions, composing functions together, and using incremental development to build correct solutions.
 
 def isThreeOrFive(n):
   """Returns boolean determination if number is multiple of 3 or 5"""
@@ -10,7 +14,15 @@ def isThreeOrFive(n):
 
 def isPrime(p):
   """Returns boolean (True/False) if the value given is prime."""
-
+  if p < 2:
+    return False
+  if p == 2:
+    return True
+  if isEven(p):
+    return False
+  for div in range(3, int(p ** 0.5) + 1, 2):    # checks up to the square root of p
+    if p % div == 0:
+      return False
   return True
 
 def isEven(n):
@@ -22,7 +34,7 @@ def isEven(n):
     return False
 
 def addNum(numList, num):
-  """Adds the given number to the given list. Does not add duplicate values."""
+  """Adds the given number to the given list."""
 
   numList.append(num)
 
